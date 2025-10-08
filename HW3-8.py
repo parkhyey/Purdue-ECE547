@@ -24,8 +24,8 @@ while t < sim_time:
     if t < sim_time:
         arrival_times.append(t)
 
-print(f"Generated {len(arrival_times)} arrivals in {sim_time} seconds")
-print(f"Average arrival rate: {len(arrival_times)/sim_time:.3f} arrivals/sec")
+# print(f"Generated {len(arrival_times)} arrivals in {sim_time} seconds")
+# print(f"Average arrival rate: {len(arrival_times)/sim_time:.3f} arrivals/sec")
 
 # Construct N(t) over a time grid
 t_plot = np.linspace(0, sim_time, 1000)
