@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import math
+from math import exp, factorial
 
 # HW3 #9: Count arrivals in sub-interval of length 1
 print("Problem 9: Count arrivals in sub-interval of length 1\n")
@@ -8,7 +10,9 @@ lambda_rate = 5
 n_trials = 1000
 counts = []
 for _ in range(n_trials):
-    inter_arrivals = np.random.exponential(1/lambda_rate, 1000)
+    # Generate inter-arrivals using inverse transform method
+    u = np.random.rand(1000)
+    inter_arrivals = -np.log(1 - u) / lambda_rate
     arrival_times = np.cumsum(inter_arrivals)
     # count arrivals in interval [3,4]
     counts.append(np.sum((arrival_times >= 3) & (arrival_times < 4)))
@@ -18,7 +22,6 @@ values, freqs = np.unique(counts, return_counts=True)
 pmf_empirical = freqs / n_trials
 
 # Theoretical Poisson(λ=5*1) = Poisson(5)
-from math import exp, factorial
 pmf_theoretical = [exp(-5) * 5**k / factorial(k) for k in values]
 
 plt.figure(figsize=(10, 6))
