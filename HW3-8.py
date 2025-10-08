@@ -10,7 +10,7 @@ def generate_exponential_sample(lambda_rate):
     return -math.log(1 - u) / lambda_rate
 
 # Problem 8: Poisson process N(t) with rate 5
-print("=== Problem 8: Poisson Process N(t) ===")
+print("Problem 8: Poisson Process N(t) with rate λ=5")
 
 lambda_rate = 5      # arrival rate
 sim_time = 30.0      # total simulation time
