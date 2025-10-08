@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # HW3 #9: Count arrivals in sub-interval of length 1
+print("Problem 9: Count arrivals in sub-interval of length 1\n")
+
 lambda_rate = 5
 n_trials = 1000
 counts = []
