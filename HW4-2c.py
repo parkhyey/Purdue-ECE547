@@ -1,5 +1,5 @@
 # HW4 (2c): Plot E[n] vs rho for an M/M/1 queue
-# Requirements: numpy, matplotlib
+# X-axis: 0 to 1, Y-axis: 0 to 10, no asymptote line
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,14 +18,18 @@ def En_MM1(rho):
 
 print("HW4, 2-(c)")
 
-# Define range of rho (avoid 1 because of asymptote)
+# Define rho values
 rhos = np.linspace(0.0, 0.999, 600)
 En_vals = En_MM1(rhos)
 
 # Plot
-plt.figure()
-plt.plot(rhos, En_vals, linewidth=2)
-plt.title(r"E[n] vs. $\rho$ for M/M/1")
+plt.figure(figsize=(7,5))
+plt.plot(rhos, En_vals, linewidth=2, color="blue")
+
+# Set requested axis ranges
+plt.xlim(0.0, 1.0)
+plt.ylim(0, 10)
+
 plt.xlabel(r"$\rho = \lambda/\mu$")
 plt.ylabel(r"$E[n]$")
 plt.grid(True)
